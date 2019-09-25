@@ -1,0 +1,225 @@
+.navbar-brand img{
+  z-index: 1000;
+  position: relative;
+  padding-bottom: 40px;
+}
+.nav1 a{
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    height: 12px;
+    font-weight: 600
+}
+.nav-link{
+padding: 0
+}
+.nav2 a{
+    color: black;
+    text-transform: uppercase;
+}
+
+.section1{
+    text-align: center;
+    text-transform: uppercase;
+
+}
+.form1{
+    
+    background-color: white;
+    padding-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 100%;
+}
+.enq-name,.enq-btn{
+    color: #0d144a;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+}
+.enq-btn .btn{
+    width: 200px;
+    text-transform: uppercase;
+}
+
+.row1{
+    background-color: #f1f0f0;
+    padding: 0;
+}
+.row2{
+    background-color: #0d144a;
+    padding: 0;
+    color: white;
+}
+.row3{
+  padding-bottom: 30px;
+}
+.center-form{
+  margin: 0 auto;
+  width:80%
+}
+.form-control{
+    width: 640px;
+   max-width: 100%;
+}
+.form-group{
+    padding: 0 30px ;
+}
+.star{
+    color: red;
+}
+ul {
+    list-style-type: none;
+    
+  }
+  ul li {
+    margin-bottom: 10px;
+  }
+.contact,.map{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+}
+.map{
+    max-width: 100%;
+}
+.phone, .email{
+    text-decoration: underline;
+    padding-top: 70px;
+}
+.fa {
+    padding: 5px;
+    font-size: 30px;
+    width: 40px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  .fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  .fa-snapchat-ghost {
+    background: #fffc00;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  .fa-whatsapp {
+    background: #25D366;
+    color: white;
+  }
+
+  
+
+  .name1{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #125688;
+  }
+  .course-name{
+    color: white;
+    background-color: black;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 7px;
+  }
+
+//////@at-root
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.carousel-control { 
+  width: 8%;
+  width: 0px;
+}
+.carousel-control.left,
+.carousel-control.right { 
+  margin-right: 40px;
+  margin-left: 32px; 
+  background-image: none;
+  opacity: 1;
+}
+.carousel-control > a > span {
+  color: white;
+  font-size: 29px !important;
+}
+
+.carousel-col { 
+  position: relative; 
+  min-height: 1px; 
+  padding: 5px; 
+  float: left;
+}
+
+.active > div { display:none; }
+.active > div:first-child { display:block; }
+
+/*xs*/
+@media (max-width: 767px) {
+.carousel-inner .active.left { left: -50%; }
+.carousel-inner .active.right { left: 50%; }
+.carousel-inner .next        { left:  50%; }
+.carousel-inner .prev		     { left: -50%; }
+.carousel-col                { width: 50%; }
+.active > div:first-child + div { display:block; }
+}
+
+/*sm*/
+@media (min-width: 768px) and (max-width: 991px) {
+.carousel-inner .active.left { left: -50%; }
+.carousel-inner .active.right { left: 50%; }
+.carousel-inner .next        { left:  50%; }
+.carousel-inner .prev		     { left: -50%; }
+.carousel-col                { width: 50%; }
+.active > div:first-child + div { display:block; }
+}
+
+/*md*/
+@media (min-width: 992px) and (max-width: 1199px) {
+.carousel-inner .active.left { left: -33%; }
+.carousel-inner .active.right { left: 33%; }
+.carousel-inner .next        { left:  33%; }
+.carousel-inner .prev		     { left: -33%; }
+.carousel-col                { width: 33%; }
+.active > div:first-child + div { display:block; }
+.active > div:first-child + div + div { display:block; }
+}
+
+/*lg*/
+@media (min-width: 1200px) {
+.carousel-inner .active.left { left: -25%; }
+.carousel-inner .active.right{ left:  25%; }
+.carousel-inner .next        { left:  25%; }
+.carousel-inner .prev		     { left: -25%; }
+.carousel-col                { width: 25%; }
+.active > div:first-child + div { display:block; }
+.active > div:first-child + div + div { display:block; }
+.active > div:first-child + div + div + div { display:block; }
+}
+
+.block {
+width: 306px;
+height: 230px;
+}
+
+// calender
+
