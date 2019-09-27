@@ -1,12 +1,14 @@
 
 #logo{
-position: relative;
+position: absolute;
 top: 0;
 left: 0;
 z-index: 1;
 
 }
-
+.main-nav, .main-carousel{
+  padding: 0 !important
+}
 .nav1 a{
     color: white;
     text-transform: uppercase;
@@ -17,6 +19,9 @@ z-index: 1;
     text-decoration: none;
   
     
+}
+.nav2 .navbar-toggler{
+  right: 0 !important;
 }
 .nav1 a:hover{
   color: white;
@@ -31,16 +36,6 @@ padding: 0;
 .nav2 a{
     color: black;
     text-transform: uppercase;
-}
-.navrow1{
-  background-color: #007bb5;
-  height: 28px;
-}
-.navrow1 .nav1{
-  padding-left: 70%;
-}
-.navrow2 .nav2{
-  padding-left: 45%;
 }
 
 .section1{
@@ -323,4 +318,15 @@ height: 230px;
 }
 .bs-example{
 margin: 20px;
+}
+
+// my media query
+
+@media screen and (max-width: 992px) {
+  .navrow1 .nav1{
+    padding-left: 10%;
+  }
+  .navrow2 .nav2{
+    padding-left: 0%;
+  }
 }
