@@ -1,21 +1,46 @@
-.navbar-brand img{
-  z-index: 1000;
-  position: relative;
-  padding-bottom: 40px;
+
+#logo{
+position: relative;
+top: 0;
+left: 0;
+z-index: 1;
+
 }
+
 .nav1 a{
     color: white;
     text-transform: uppercase;
     font-size: 12px;
     height: 12px;
-    font-weight: 600
+    font-weight: 600;
+    margin: 0;
+    text-decoration: none;
+  
+    
+}
+.nav1 a:hover{
+  color: white;
 }
 .nav-link{
-padding: 0
+padding: 0;
+
+}
+.nav-item{
+  margin: 0;
 }
 .nav2 a{
     color: black;
     text-transform: uppercase;
+}
+.navrow1{
+  background-color: #007bb5;
+  height: 28px;
+}
+.navrow1 .nav1{
+  padding-left: 70%;
+}
+.navrow2 .nav2{
+  padding-left: 45%;
 }
 
 .section1{
@@ -40,6 +65,20 @@ padding: 0
 .enq-btn .btn{
     width: 200px;
     text-transform: uppercase;
+}
+.cal-area{
+  margin-top: 30px;
+  background-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  max-width: 100%;
+
+}
+.cal-name{
+  color: #c73232;
+  border-bottom: 2px solid #56575c;
+  margin-bottom: 10px;
 }
 
 .row1{
@@ -125,12 +164,17 @@ ul {
     background: #25D366;
     color: white;
   }
+  .fa-search{
+    font-size: 12px;
+    padding: 0;
+  }
+  
 
   
 
   .name1{
     padding-top: 30px;
-    padding-bottom: 30px;
+    
     color: #125688;
   }
   .course-name{
@@ -139,8 +183,16 @@ ul {
     font-family: 'Times New Roman', Times, serif;
     padding-left: 7px;
   }
+  .course-name a {
+    color: white;
+    text-decoration: none;
+  }
+  .card-body {
+    background-color: #f1f0f0;
+  }
 
 //////@at-root
+
 
 .col-centered {
   float: none;
@@ -191,6 +243,15 @@ ul {
 .carousel-inner .prev		     { left: -50%; }
 .carousel-col                { width: 50%; }
 .active > div:first-child + div { display:block; }
+
+.navrow1 .nav1{
+  width: 100%;
+}
+.navrow2 .nav2{
+  width: 100%
+}
+
+
 }
 
 /*md*/
@@ -223,3 +284,13 @@ height: 230px;
 
 // calender
 
+.carousel{
+  margin-top: 20px;
+}
+.carousel-item{
+  text-align: center;
+  min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+.bs-example{
+margin: 20px;
+}

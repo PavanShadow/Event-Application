@@ -1,0 +1,16 @@
+.fc-day-grid{
+    background-color: white;
+}
+.fc-header-toolbar{
+    color: white;
+    background-color: #c73232;
+    height: 50px;
+}
+.fc-button-primary{
+    background-color:#c73232 !important;
+    border-color: #c73232 !important;
+    
+}
+.fc-today{
+    background-color: #c73232 !important;
+}

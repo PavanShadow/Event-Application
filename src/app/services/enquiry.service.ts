@@ -14,23 +14,13 @@ export class EnquiryService {
 
   options:any;
 
-  constructor(private http : HttpClient) {
-      //this.headers.append('enctype','multipart/form-data');
-
-      
-      //this.options = new HttpHeaderResponse();
-   }
+  constructor(private http : HttpClient) {}
 
    headers: HttpHeaders  = new HttpHeaders();
-  postProduct(enqs: Enquiry){
-    let d = {
-      "query": "query{ login(email:\"hello1@test.com\",password:\"hello1\"){token} }"
-    };
+    postProduct(enqs: Enquiry){ 
+
     this.headers = this.headers.append('Content-Type','application/json');
-    // this.headers.append('X-Requested-With','XMLHttpRequest');
-    //this.headers = this.headers.append('Access-Control-Allow-Methods', 'POST');
     this.headers = this.headers.append('Access-Control-Allow-Origin','*');
-    //this.headers = this.headers.append('Access-Control-Allow-Headers', 'Content-Type, Accept, Authorization, X-Requested-With');
 
     console.log("hhjjh",this.headers);
     return this.http.post(this.baseUrl, enqs,{headers:this.headers});
