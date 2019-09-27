@@ -33,7 +33,7 @@ export class AppComponent implements OnInit{
 
   bsModalRef: BsModalRef;
   @ViewChild('fullcalendar') fullcalendar: CalendarComponent;
-  data: any;
+  // date= new Date();
 
   constructor(private http: HttpClient,
               private enqservice: EnquiryService,
@@ -43,9 +43,7 @@ export class AppComponent implements OnInit{
               private modalService: BsModalService){ }
 
   ngOnInit() {
-    this.eventService.getEvents(this.data).subscribe((res) =>{
-      console.log(res);
-    })
+    
     this.options = {
       editable: true,
       events: [
@@ -66,11 +64,6 @@ export class AppComponent implements OnInit{
 
 
   }
-
-  // onLogin(form:NgForm){
-  //   console.log(form.value);
-  // }
-
 
   	onSubmit(form: NgForm){
       console.log('form',form.value);
@@ -166,20 +159,20 @@ export class AppComponent implements OnInit{
       <form #evntForm="ngForm" (ngSubmit)="addEvent(evntForm)">
       <div class="form-group">
         <label for="name">Title</label><span class="star">*</span>
-        <input type="text" class="form-control" ngModel name="title"  >
+        <input type="text" class="form-control" ngModel name="title"  required>
         
       </div>
       <div class="form-group">
         <label for="name">Start time</label><span class="star">*</span>
-        <input type="text" class="form-control" ngModel name="startTime"  >
+        <input type="text" class="form-control" ngModel name="startTime" required >
         
       </div>
       <div class="form-group">
         <label for="name">End time</label><span class="star">*</span>
-        <input type="text" class="form-control" ngModel name="endTime"  >
+        <input type="text" class="form-control" ngModel name="endTime" required >
         
       </div>
-      <div class="form-group"><button class="btn btn-success" type='submit'>Add</button></div>
+      <div class="form-group"><button class="btn btn-success" type='submit' [disabled]="!evntForm.valid">Add</button></div>
       </form>
     </div>
 
@@ -225,10 +218,11 @@ export class ModalContentComponent implements OnInit {
   }
 
   editEvent(data){
-    data.value['date'] = this.title;
+    // data.value['date'] = this.title;
     
-    this.eventService.editEvent(data)
-    .subscribe((res)=> {
+    this.eventService.editEvent(data.value)
+    .subscribe((data)=> {
+      console.log(data);
       alert("sucessefully updated");
       this.bsModalRef.hide();
     })

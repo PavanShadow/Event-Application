@@ -36,6 +36,6 @@ getEvents(date) {
     this.headers = this.headers.append('Content-Type','application/json');
     this.headers = this.headers.append('Access-Control-Allow-Origin','*');
 
-    return this.http.post(this.baseUrl+'/edit', event ,{headers:this.headers});
+    return this.http.post(this.baseUrl+'/edit', {"event":event} ,{headers:this.headers});
   }
 }

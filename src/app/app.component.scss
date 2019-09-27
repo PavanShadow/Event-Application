@@ -57,7 +57,7 @@ padding: 0;
     max-width: 100%;
 }
 .enq-name,.enq-btn{
-    color: #0d144a;
+    color: #125688;;
     text-transform: uppercase;
     text-align: center;
     padding: 20px;
@@ -76,9 +76,20 @@ padding: 0;
 
 }
 .cal-name{
+  
   color: #c73232;
   border-bottom: 2px solid #56575c;
   margin-bottom: 10px;
+}
+.cal-name h2::after{
+    content: "";
+    height: 4px;
+    width: 100px;
+    background-color: #25D366;
+    position: absolute;
+    bottom: 89.7%;
+    left: 10%;
+    margin-left: -50px;
 }
 
 .row1{
@@ -119,12 +130,28 @@ ul {
     padding-bottom: 30px;
     padding-left: 30px;
 }
+.contact h3{
+  margin-bottom: 30px;
+}
+.contact h3::after{
+    content: "";
+    height: 4px;
+    width: 100px;
+    background-color: #b64172;
+    position: absolute;
+    bottom: 73%;
+    left: 23%;
+    margin-left: -50px;
+}
 .map{
     max-width: 100%;
 }
 .phone, .email{
     text-decoration: underline;
-    padding-top: 70px;
+    padding-top: 90px;
+}
+.social{
+  padding-top: 30px;
 }
 .fa {
     padding: 5px;
@@ -173,7 +200,7 @@ ul {
   
 
   .name1{
-    padding-top: 30px;
+    padding-top: 10px;
     
     color: #125688;
   }
@@ -192,7 +219,16 @@ ul {
   }
 
 //////@at-root
-
+.carousel-control-prev{
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.carousel-control-next{
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
 
 .col-centered {
   float: none;
@@ -244,12 +280,6 @@ ul {
 .carousel-col                { width: 50%; }
 .active > div:first-child + div { display:block; }
 
-.navrow1 .nav1{
-  width: 100%;
-}
-.navrow2 .nav2{
-  width: 100%
-}
 
 
 }
