@@ -43,7 +43,9 @@ export class AppComponent implements OnInit{
               private modalService: BsModalService){ }
 
   ngOnInit() {
-    
+    // this.eventService.getEvents(data).subscribe(data=>{
+
+    // })
     this.options = {
       editable: true,
       events: [
@@ -87,7 +89,7 @@ export class AppComponent implements OnInit{
             list: d,
             title: data['dateStr']
           };
-          console.log(d);
+          // console.log(d);
           this.bsModalRef = this.modalService.show(ModalContentComponent, {initialState});
           this.bsModalRef.content.closeBtnName = 'Close';
         });
@@ -113,10 +115,11 @@ export class AppComponent implements OnInit{
 
     public error = null;
 
-    onLogin(form: NgForm) {
-      console.log('form', form.value);
+    onLogin() {
+      // console.log('form', form.value);
       this.loginService.login(this.form).subscribe(
-        data => this.handleResponse(data),
+        data => console.log(data),
+        // data => this.handleResponse(data),
         error => this.handleError(error)
       );
     }
@@ -146,7 +149,7 @@ export class AppComponent implements OnInit{
         <li *ngFor="let item of list">
         
         {{item['title']}} <br> {{ item['start'] }}  ||  {{ item['end'] }}
-        <button class="btn btn-primary" (click)="editEvent(item)">Edit</button>
+        <button class="btn btn-primary" (click)="editEvent(item.id)">Edit</button>
         <button class="btn btn-danger" (click)="deleteEvent(item.id)">Delete</button>
 
         </li>
@@ -177,7 +180,7 @@ export class AppComponent implements OnInit{
     </div>
 
     <div class="modal-footer">
-      <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+      <button type="button" class="btn btn-warning" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
     </div>
   ` 
 })
@@ -217,19 +220,14 @@ export class ModalContentComponent implements OnInit {
     })
   }
 
-  editEvent(data){
+  editEvent(id){
     // data.value['date'] = this.title;
     
-    this.eventService.editEvent(data.value)
-    .subscribe((data)=> {
-      console.log(data);
-      alert("sucessefully updated");
-      this.bsModalRef.hide();
+    this.eventService.editEvent(id)
+    .subscribe((res) =>{
+     
     })
   }
 
   
-
-  
-
 }

@@ -67,7 +67,7 @@ padding: 0;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 40px;
-  max-width: 100%;
+  // max-width: 100%;
 
 }
 .cal-name{
@@ -247,7 +247,7 @@ ul {
 }
 
 .carousel-col { 
-  position: relative; 
+  // position: relative; 
   min-height: 1px; 
   padding: 5px; 
   float: left;
@@ -321,12 +321,57 @@ margin: 20px;
 }
 
 // my media query
-
-@media screen and (max-width: 992px) {
-  .navrow1 .nav1{
-    padding-left: 10%;
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
   }
-  .navrow2 .nav2{
-    padding-left: 0%;
+  .col-6{
+    max-width: 100%;
   }
+  
+  .form1{
+    padding-left: 0;
+  }
+  .cal-area{
+    padding: 0;
+   
+  }
+  .contact h3::after{
+    display: none;
+  }
+  .cal-name h2::after{
+    display: none;
+  }
+  .col-md-3{
+    max-width: 100%;
+  
+  }
+  .contact{
+    padding-left: 0;
+  }
+  .phone{
+    padding-top: 0;
+   
+  }
+  .email{
+    padding-top: 20px;
+  }
+  .map{
+    padding-left: 0
+  }
+  .social{
+    text-align: center;
+  }
+  .mapouter{
+    text-align: center !important;
+  }
+  .ml-auto{
+    text-align: center;
+  }
+  #logo{
+    width: 60px;
+    height: 56px;
+  }
+  
 }
