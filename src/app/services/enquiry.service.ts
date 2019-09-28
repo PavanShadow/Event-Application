@@ -17,12 +17,12 @@ export class EnquiryService {
   constructor(private http : HttpClient) {}
 
    headers: HttpHeaders  = new HttpHeaders();
-    postProduct(enqs: Enquiry){ 
+    postEnquiry(enqs: Enquiry){ 
 
     this.headers = this.headers.append('Content-Type','application/json');
     this.headers = this.headers.append('Access-Control-Allow-Origin','*');
 
-    console.log("hhjjh",this.headers);
-    return this.http.post(this.baseUrl, enqs,{headers:this.headers});
+    // console.log("hhjjh",this.headers);
+    return this.http.post(this.baseUrl, enqs, {headers:this.headers});
   }
 }

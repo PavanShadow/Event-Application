@@ -46,10 +46,11 @@ padding: 0;
 .form1{
     
     background-color: white;
-    padding-left: 50px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    max-width: 100%;
+    padding: 50px;
+    // margin-top: 30px;
+    margin : 30px auto;
+    // margin-bottom: 30px;
+    max-width: 80%;
 }
 .enq-name,.enq-btn{
     color: #125688;;
@@ -319,6 +320,8 @@ height: 230px;
 .bs-example{
 margin: 20px;
 }
+
+
 
 // my media query
 @media only screen and (max-width: 768px) {

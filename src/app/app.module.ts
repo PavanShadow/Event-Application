@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { ModalContentComponent } from './app.component';
 
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { TokenService } from './services/token.service';
+// import { TokenService } from './services/token.service';
 import { LoginService } from './services/login.service';
 
 @NgModule({
@@ -26,7 +26,7 @@ import { LoginService } from './services/login.service';
     FullCalendarModule,
     ModalModule.forRoot(),
   ],
-  providers: [ LoginService,TokenService],
+  providers: [ LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

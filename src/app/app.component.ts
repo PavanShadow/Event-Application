@@ -15,7 +15,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 import { EventService } from './services/event.service';
 import { LoginService } from './services/login.service';
-import { TokenService } from './services/token.service';
+// import { TokenService } from './services/token.service';
 
 @Injectable()
 
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit{
               private enqservice: EnquiryService,
               private eventService: EventService,
               private loginService: LoginService,
-              private tokenService : TokenService,
+              // private tokenService : TokenService,
               private modalService: BsModalService){ }
 
   ngOnInit() {
@@ -69,7 +69,7 @@ export class AppComponent implements OnInit{
 
   	onSubmit(form: NgForm){
       console.log('form',form.value);
-      this.enqservice.postProduct(form.value).subscribe((res) => {
+      this.enqservice.postEnquiry(form.value).subscribe((res) => {
         // this.resetForm(form);
         alert("Success");
         form.reset();
@@ -118,18 +118,10 @@ export class AppComponent implements OnInit{
     onLogin() {
       // console.log('form', form.value);
       this.loginService.login(this.form).subscribe(
-        data => console.log(data),
-        // data => this.handleResponse(data),
-        error => this.handleError(error)
+        
       );
     }
-    handleResponse(data){
-        this.tokenService.handle(data.access_token);
-    }
-
-    handleError(error){
-        this.error = error.error.error;
-    }
+   
 }
 
 
