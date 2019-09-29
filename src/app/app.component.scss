@@ -18,7 +18,9 @@ z-index: 1;
     margin: 0;
     text-decoration: none;
   
-    
+}
+.nav1 a:focus{
+  color: white !important;
 }
 .nav2 .navbar-toggler{
   right: 0 !important;
