@@ -36,6 +36,7 @@ padding: 0;
 .nav2 a{
     color: black;
     text-transform: uppercase;
+    font-weight: 600;
 }
 
 .section1{
@@ -51,6 +52,9 @@ padding: 0;
     margin : 30px auto;
     // margin-bottom: 30px;
     max-width: 80%;
+}
+.form1 label{
+  font-weight: 600;
 }
 .enq-name,.enq-btn{
     color: #125688;;
@@ -75,7 +79,7 @@ padding: 0;
   
   color: #c73232;
   border-bottom: 2px solid #56575c;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .cal-name h2::after{
     content: "";
@@ -140,6 +144,7 @@ ul {
     margin-left: -50px;
 }
 .map{
+  padding-top: 60px;
     max-width: 100%;
 }
 .phone, .email{
@@ -334,7 +339,8 @@ margin: 20px;
   }
   
   .form1{
-    padding-left: 0;
+    padding: 0;
+    max-width: 100%;
   }
   .cal-area{
     padding: 0;

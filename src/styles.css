@@ -1,5 +1,10 @@
 .fc-day-grid{
     background-color: white;
+    text-align: center;
+    
+}
+.fc-unthemed td{
+    border: none !important;
 }
 .fc-header-toolbar{
     color: white;
@@ -15,13 +20,20 @@
     background-color: #c73232 !important;
     color: white !important;
 }
+
 .fc-day-number{
     font-size: 25px !important;
-  
+   margin-top: 25%;
+   margin-right: 37%;
+}
 
-}
-.fc-day-top {
+@media only screen and (max-width: 768px) {
+    .fc-day-number{
+       font-size: 25px !important;
+       /* margin-top: 25%; */
+       /* margin-right: 37%; */
+    }
     
-    
 }
+
 
