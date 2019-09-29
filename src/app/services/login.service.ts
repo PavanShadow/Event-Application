@@ -17,4 +17,10 @@ export class LoginService {
 
     return this.http.post(this.baseUrl+'/login', data, {headers:this.headers});
   }
+  changePwd(data){
+    this.headers = this.headers.append('Content-Type','application/json');
+    this.headers = this.headers.append('Access-Control-Allow-Origin','*');
+
+    return this.http.post(this.baseUrl+'/password/change', data, {headers:this.headers});
+  }
 }

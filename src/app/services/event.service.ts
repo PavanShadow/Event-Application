@@ -18,6 +18,37 @@ export class EventService {
     return this.http.post(this.baseUrl, event,{headers:this.headers});
   }
 
+  getAllEvents() {
+    return this.http.get(this.baseUrl)
+    .toPromise()
+    .then(res => <any[]> res)
+    .then(data => {
+
+      var dataM = [];
+
+      if(data === undefined) {
+        return;
+      }
+
+      data.forEach(element => {
+
+        dataM.push(
+          {
+            'title': element['title'],
+            'start': new Date(element['start']),
+            'end' : new Date(element['end']),
+            'weekends': 'true'
+          }
+        );
+
+      });
+
+      //let x = [];
+
+      return dataM;
+    });
+  }
+
 getEvents(date) {
     this.headers = this.headers.append('Content-Type','application/json');
     this.headers = this.headers.append('Access-Control-Allow-Origin','*');
@@ -32,10 +63,10 @@ getEvents(date) {
     return this.http.post(this.baseUrl+'/delete' , {"id":id}, {headers:this.headers});
   }
 
-  editEvent(id){
+  editEvent(data){
     this.headers = this.headers.append('Content-Type','application/json');
     this.headers = this.headers.append('Access-Control-Allow-Origin','*');
 
-    return this.http.post(this.baseUrl+'/edit', {"id":id} ,{headers:this.headers});
+    return this.http.post(this.baseUrl+'/edit', data ,{headers:this.headers});
   }
 }

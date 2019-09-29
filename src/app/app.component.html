@@ -6,21 +6,29 @@
         </button>
         <div id="navbarNavDropdown" class="navbar-collapse collapse">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Alumini</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Careers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href=""><i class="fa fa-search" ></i></a>
-                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Alumini</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Careers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href=""><i class="fa fa-search" ></i></a>
+              </li>
+              <li *ngIf="!isLoggedIn" class="nav-item">
+                  <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter">Login</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="" *ngIf="user" (click)="logout()" class="nav-link">{{ user }}</a>
+              </li>
+              <li *ngIf="isLoggedIn" class="nav-item">
+                  <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter2">Change password</a>
+              </li>
+              
             </ul>
         </div>
     </nav>
@@ -62,19 +70,19 @@
 </div>
 
   
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <!-- Modal 1-->
+  <div  class="modal fade"  data-backdrop="" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">User Signin</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button id="closeLogin" #closeLoginBtn type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <form #loginForm="ngForm" (ngSubmit)="onLogin()">
-              <div class="alert alert-danger" [hidden]="!error">
+            <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+              <div class="alert alert-danger" *ngIf="error">
                 {{error}}
               </div>
                 <div class="form-group row">
@@ -100,9 +108,7 @@
                   <div class="col-sm-6">
                     <button type="submit" class="btn btn-primary" >Log In</button>
                   </div>
-                  <div class="col-sm-6">
-                      <button type="button" class="btn btn-success" data-target="chngpwd"  >Change Password</button>
-                  </div>
+                  
 
                 </div>
               </form>
@@ -114,6 +120,51 @@
       </div>
     </div>
   </div>
+
+  <!-- model chnge pwd -->
+
+  <div  class="modal fade"  data-backdrop="" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">User Change Password</h5>
+            <button id="closeChange" #closeChangeBtn type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <form #changepwdForm="ngForm" (ngSubmit)="onChangePwd(changepwdForm)">
+                
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-4 col-form-label">Existing Email</label>
+                    <div class="col-sm-8">
+                      <input type="email" class="form-control" placeholder="Username" ngModel name="email">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-4 col-form-label">New Password</label>
+                    <div class="col-sm-8">
+                      <input type="password" class="form-control"  placeholder="Password" ngModel name="password">
+                    </div>
+                  </div>
+                  
+                 
+                  <div class="form-group row">
+                    <div class="col-sm-10">
+                      <button type="submit" class="btn btn-primary" >Change Password</button>
+                    </div>
+                    
+  
+                  </div>
+                </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
 
  
 
@@ -272,7 +323,7 @@
             <div class="cal-name">
               <h2>Event Calender</h2>
             </div>
-                <ng-container *ngIf="options">
+                <ng-container *ngIf="options && events">
                   <ng-fullcalendar
                     #fullcalendar
                     (dateClick)="dateClick($event)"
@@ -280,6 +331,7 @@
                     (eventDragStop)="eventDragStop($event)"
                     [eventsModel]="eventsModel"
                     [options]="options"
+                    
                     (eventClick)="eventClick($event)"
                   ></ng-fullcalendar>
                 </ng-container>
